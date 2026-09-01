@@ -1,0 +1,731 @@
+<meta charset="utf-8">
+<title>Headgate Animal Health</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Headgate Animal Health — manufacturer-direct cattle vaccines, dewormers, fly control and minerals. Lyophilized MLV vaccines, priced 15–20% under retail.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#EEEEE9; --surface:#FFFFFF; --ink:#16150F; --ink-2:#45463F; --muted:#6E7068; --line:#D4D5CC;
+  --tag:#F2C230; --tag-ink:#16150F; --tag-text:#8A6A05; --pine:#1F3A2E; --pine-ink:#FFFFFF;
+  --dark:#151A17; --dark-2:#1E2521; --dark-ink:#ECEBE4; --dark-muted:#A7ABA3; --dark-line:#2E3631;
+  --ok:#2E7D4F; --ok-bg:#E1F0E7; --warn:#8F6A0E; --warn-bg:#FBF0D0; --bad:#A63A2B; --bad-bg:#F8E2DE;
+  --shadow:0 10px 30px rgba(20,20,15,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#131412; --surface:#1C1E1B; --ink:#ECEBE4; --ink-2:#C6C5BC; --muted:#9B9C93; --line:#33352F;
+    --tag:#F2C230; --tag-ink:#16150F; --tag-text:#F2C230; --pine:#A9D3BA; --pine-ink:#131412;
+    --dark:#0E110F; --dark-2:#161A17; --dark-ink:#ECEBE4; --dark-muted:#A7ABA3; --dark-line:#2A322D;
+    --ok:#7CCB98; --ok-bg:#1E3A2A; --warn:#E6BE5A; --warn-bg:#3A3015; --bad:#F09A8C; --bad-bg:#42231E;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#131412; --surface:#1C1E1B; --ink:#ECEBE4; --ink-2:#C6C5BC; --muted:#9B9C93; --line:#33352F;
+  --tag:#F2C230; --tag-ink:#16150F; --tag-text:#F2C230; --pine:#A9D3BA; --pine-ink:#131412;
+  --dark:#0E110F; --dark-2:#161A17; --dark-ink:#ECEBE4; --dark-muted:#A7ABA3; --dark-line:#2A322D;
+  --ok:#7CCB98; --ok-bg:#1E3A2A; --warn:#E6BE5A; --warn-bg:#3A3015; --bad:#F09A8C; --bad-bg:#42231E;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Big Shoulders Display","Archivo Narrow","Arial Narrow",Impact,sans-serif;margin:0;line-height:.95;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:clamp(3rem,8vw,6.4rem);font-weight:800;text-transform:uppercase}
+h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;text-transform:uppercase}
+h3{font-size:1.5rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tag);outline-offset:2px}
+button{font:inherit;cursor:pointer}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tag-text)}
+.section{padding:88px 0}
+.section-head{display:flex;flex-direction:column;gap:12px;max-width:62ch;margin-bottom:40px}
+.section-head p{color:var(--ink-2);font-size:1.1rem}
+.btn{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--ink);background:var(--ink);color:var(--ground);padding:12px 22px;font-weight:700;text-decoration:none;border-radius:3px;letter-spacing:.01em;transition:transform .12s ease,background .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.tag{background:var(--tag);border-color:var(--tag);color:var(--tag-ink)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.sm{padding:8px 14px;font-size:.92rem}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:1.45rem;text-transform:uppercase;letter-spacing:.02em}
+.brand svg{width:34px;height:34px;color:var(--tag)}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:.95rem}
+.nav-links a{text-decoration:none;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+.cartbtn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--ground);border:0;padding:9px 14px;border-radius:3px;font-weight:700}
+.cartbtn .count{background:var(--tag);color:var(--tag-ink);font-family:"JetBrains Mono",monospace;font-size:.78rem;padding:1px 7px;border-radius:2px;min-width:22px;text-align:center}
+@media (max-width:820px){.nav-links{display:none}}
+
+/* HERO */
+.hero{background:var(--dark);color:var(--dark-ink);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;padding-top:88px;padding-bottom:88px;align-items:end}
+.hero h1 .accent{color:var(--tag)}
+.hero .lede{font-size:1.25rem;color:var(--dark-muted);max-width:54ch;margin-top:26px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero .btn.ghost{color:var(--dark-ink)}
+.eartag{position:relative;background:var(--tag);color:var(--tag-ink);border-radius:18px 18px 22px 22px;padding:30px 28px 26px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:rotate(-2.5deg);max-width:340px;justify-self:end}
+.eartag:before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:var(--dark);border:6px solid var(--tag)}
+.eartag .big{font-family:"Big Shoulders Display",sans-serif;font-size:5.2rem;font-weight:800;line-height:.85;letter-spacing:-.01em}
+.eartag .sub{font-family:"JetBrains Mono",monospace;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;font-weight:600}
+.eartag .fine{margin-top:14px;font-size:.95rem;line-height:1.35;font-weight:600}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--dark-line) 1px,transparent 1px),linear-gradient(90deg,var(--dark-line) 1px,transparent 1px);background-size:64px 64px;opacity:.35;mask-image:linear-gradient(to bottom,transparent,black 40%,transparent)}
+.hero .wrap{position:relative}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.eartag{justify-self:start;margin-top:12px}}
+
+.trust{background:var(--dark-2);color:var(--dark-ink);border-top:1px solid var(--dark-line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:22px 24px}
+.trust div{display:flex;flex-direction:column;gap:3px;font-size:.95rem}
+.trust b{font-family:"Big Shoulders Display",sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.trust span{color:var(--dark-muted);font-size:.9rem}
+@media (max-width:820px){.trust .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* CATEGORY TILES */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{background:var(--surface);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-radius:4px;transition:border-color .12s ease,transform .12s ease}
+.tile:hover{border-color:var(--ink);transform:translateY(-2px)}
+.tile h3{text-transform:uppercase;font-size:1.6rem}
+.tile p{color:var(--ink-2);font-size:.98rem}
+.tile .n{margin-top:auto;font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:820px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+
+/* CATALOG */
+.catalog-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px;position:sticky;top:66px;background:var(--ground);padding:14px 0;z-index:10;border-bottom:1px solid var(--line)}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);padding:7px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.search{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);padding:7px 12px;border-radius:3px;min-width:240px}
+.search input{border:0;background:transparent;font:inherit;color:inherit;outline:none;width:100%}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}.search{margin-left:0;width:100%}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
+.card .top{padding:18px 20px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card .sku{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--muted);letter-spacing:.06em}
+.card .name{font-family:"Big Shoulders Display",sans-serif;font-size:1.65rem;font-weight:700;line-height:1;margin-top:6px;text-transform:uppercase}
+.card .form{font-size:.86rem;color:var(--ink-2);margin-top:6px;font-weight:600}
+.card .desc{padding:12px 20px 0;color:var(--ink-2);font-size:.95rem;flex:1}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;padding:12px 20px 0}
+.card .t{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:2px 8px;border-radius:2px;color:var(--ink-2)}
+.card .t.lyo{border-color:var(--tag);color:var(--tag-text);font-weight:600}
+.card .buy{border-top:1px solid var(--line);margin-top:16px;padding:14px 20px 18px;display:flex;flex-direction:column;gap:10px}
+.card select{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:3px;background:var(--ground);color:var(--ink);width:100%}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.price{font-family:"JetBrains Mono",monospace;font-size:1.35rem;font-weight:600}
+.retail{font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--muted);text-decoration:line-through}
+.perdose{font-size:.82rem;color:var(--muted)}
+.save{font-family:"JetBrains Mono",monospace;font-size:.74rem;background:var(--tag);color:var(--tag-ink);padding:2px 7px;border-radius:2px;font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:600;white-space:nowrap}
+.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.in{background:var(--ok-bg);color:var(--ok)}
+.pill.low{background:var(--warn-bg);color:var(--warn)}
+.pill.bo{background:var(--bad-bg);color:var(--bad)}
+.addbtn{background:var(--ink);color:var(--ground);border:0;padding:10px;border-radius:3px;font-weight:700;width:100%}
+.addbtn:disabled{opacity:.45;cursor:not-allowed}
+.addbtn.added{background:var(--ok)}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line)}
+
+/* LYOPHILIZED */
+.lyo{background:var(--dark);color:var(--dark-ink)}
+.lyo .eyebrow{color:var(--tag)}
+.lyo .section-head p{color:var(--dark-muted)}
+.lyo-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+@media (max-width:900px){.lyo-grid{grid-template-columns:1fr}}
+.vial-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vstep{background:var(--dark-2);border:1px solid var(--dark-line);padding:20px;border-radius:4px;display:flex;flex-direction:column;gap:12px}
+.vstep .k{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:var(--tag);text-transform:uppercase}
+.vstep h4{font-size:1.35rem;text-transform:uppercase}
+.vstep p{color:var(--dark-muted);font-size:.93rem}
+.vstep svg{width:100%;height:auto;max-height:90px}
+@media (max-width:620px){.vial-steps{grid-template-columns:1fr}}
+.why{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--dark-line)}
+.why div{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--dark-line)}
+.why b{font-family:"Big Shoulders Display",sans-serif;font-size:1.3rem;text-transform:uppercase;font-weight:700;letter-spacing:.02em}
+.why p{color:var(--dark-muted);font-size:.97rem}
+@media (max-width:520px){.why div{grid-template-columns:1fr;gap:6px}}
+
+/* PROTOCOL */
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:.95rem}
+th,td{text-align:left;padding:14px 16px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--ground);font-weight:600}
+tr:last-child td{border-bottom:none}
+td.season{font-family:"Big Shoulders Display",sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;white-space:nowrap}
+td .when{display:block;font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--muted);margin-top:4px;text-transform:none;letter-spacing:.02em}
+td ul{margin:0;padding-left:1.1em}
+td li{margin:3px 0}
+.note{margin-top:16px;font-size:.9rem;color:var(--muted);max-width:70ch}
+
+/* WHY DIRECT + CALCULATOR */
+.direct{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media (max-width:900px){.direct{grid-template-columns:1fr}}
+.direct .prose{display:flex;flex-direction:column;gap:16px;max-width:58ch}
+.direct .prose p{color:var(--ink-2);font-size:1.05rem}
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:26px;box-shadow:var(--shadow)}
+.calc h3{text-transform:uppercase;font-size:1.7rem}
+.calc .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:600;color:var(--ink-2)}
+.calc input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:var(--ground);color:var(--ink);font-family:"JetBrains Mono",monospace}
+.calc .out{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--ground);border:1px solid var(--line);padding:14px 16px;border-radius:3px;display:flex;flex-direction:column;gap:2px}
+.stat .k{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:"JetBrains Mono",monospace;font-size:1.45rem;font-weight:600}
+.stat.hi{background:var(--tag);color:var(--tag-ink);border-color:var(--tag);grid-column:1/-1}
+.stat.hi .k{color:var(--tag-ink);opacity:.75}
+.stat.hi .v{font-size:2.2rem}
+.calc .fine{margin-top:14px;font-size:.82rem;color:var(--muted)}
+
+/* ORDER */
+.order{background:var(--surface);border-top:1px solid var(--line)}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media (max-width:900px){.order-grid{grid-template-columns:1fr}}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:600;color:var(--ink-2)}
+.form label.full{grid-column:1/-1}
+.form input,.form textarea,.form select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:var(--ground);color:var(--ink)}
+.form textarea{min-height:90px;resize:vertical}
+.contact{display:flex;flex-direction:column;gap:18px}
+.contact .row{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.contact .row b{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.contact .row span{color:var(--ink-2)}
+
+/* CART DRAWER */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--surface);z-index:60;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2)}
+.drawer.open{transform:translateX(0)}
+.drawer header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line)}
+.drawer header h3{text-transform:uppercase;font-size:1.6rem}
+.drawer .close{background:transparent;border:0;font-size:1.6rem;line-height:1;color:var(--ink)}
+.lines{flex:1;overflow-y:auto;padding:10px 22px}
+.line{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
+.line .ln{font-weight:700}
+.line .ls{font-size:.85rem;color:var(--muted)}
+.line .lp{font-family:"JetBrains Mono",monospace;font-weight:600;text-align:right}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:3px;margin-top:8px}
+.qty button{background:transparent;border:0;width:30px;height:30px;color:var(--ink);font-weight:700}
+.qty span{font-family:"JetBrains Mono",monospace;min-width:30px;text-align:center;font-size:.9rem}
+.line .rm{background:transparent;border:0;color:var(--muted);font-size:.8rem;text-decoration:underline;padding:0;margin-top:6px;justify-self:end}
+.totals{padding:16px 22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px;background:var(--ground)}
+.totals div{display:flex;justify-content:space-between;font-size:.95rem}
+.totals .grand{font-family:"JetBrains Mono",monospace;font-size:1.25rem;font-weight:600}
+.totals .sv{color:var(--ok);font-weight:600}
+.totals .btn{width:100%;justify-content:center;margin-top:8px}
+.drawer .emptycart{padding:40px 22px;text-align:center;color:var(--muted)}
+
+footer{background:var(--dark);color:var(--dark-muted);padding:48px 0 40px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+footer .brand{color:var(--dark-ink);margin-bottom:10px}
+footer h4{color:var(--dark-ink);text-transform:uppercase;font-size:1.1rem;letter-spacing:.06em;margin-bottom:10px}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--dark-ink)}
+footer .legal{grid-column:1/-1;border-top:1px solid var(--dark-line);padding-top:18px;font-size:.82rem;max-width:90ch}
+@media (max-width:820px){footer .wrap{grid-template-columns:1fr}}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:var(--ground);padding:10px 18px;border-radius:3px;font-weight:600;opacity:0;pointer-events:none;transition:all .2s ease;z-index:70}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Headgate Animal Health home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="3" width="34" height="34" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M14 10v21M26 10v21M8 10h24" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      Headgate<span style="font-weight:600;opacity:.7">&nbsp;Animal Health</span>
+    </a>
+    <div class="nav-links">
+      <a href="#catalog">Catalog</a>
+      <a href="#lyophilized">Lyophilized vials</a>
+      <a href="#protocol">Protocol guide</a>
+      <a href="#direct">Why direct</a>
+      <a href="#order">Order</a>
+    </div>
+    <button class="cartbtn" id="cartOpen" aria-label="Open cart">Cart <span class="count" id="cartCount">0</span></button>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--tag)">Manufacturer-direct cattle health</span>
+      <h1 style="margin-top:18px">Made at the source.<br><span class="accent">Priced for the ranch.</span></h1>
+      <p class="lede">Headgate makes its own vaccines, dewormers, fly control and minerals and ships them straight to your operation — no distributor, no farm-store markup. Reproductive and respiratory MLV vaccines in freeze-dried vials, built for the chute.</p>
+      <div class="cta">
+        <a class="btn tag" href="#catalog">Shop the catalog</a>
+        <a class="btn ghost" href="#protocol">Build a protocol</a>
+      </div>
+    </div>
+    <div class="eartag" role="img" aria-label="15 to 20 percent under retail, every product, every day">
+      <div class="big">15–20%</div>
+      <div class="sub">Under retail</div>
+      <div class="fine">Every product. Every day. Because you're buying from the people who made it.</div>
+    </div>
+  </div>
+  <div class="trust">
+    <div class="wrap">
+      <div><b>Manufacturer-direct</b><span>We make it. You buy it. Nobody in between.</span></div>
+      <div><b>Cold-chain shipped</b><span>Insulated packs, ships Mon–Wed, free over $350.</span></div>
+      <div><b>Lyophilized MLV</b><span>Freeze-dried vials, potency locked at the plant.</span></div>
+      <div><b>Vet on the line</b><span>Protocol questions answered by a DVM, not a call center.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we make</span>
+      <h2>Everything that goes through the headgate</h2>
+      <p>Six product lines, one source. Pick a line or scroll to the full catalog with live stock.</p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+</section>
+
+<section class="section" id="catalog" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Catalog</span>
+      <h2>Inventory &amp; pricing</h2>
+      <p>Retail comparison is the typical farm-store or online shelf price for an equivalent product. Stock updates daily.</p>
+    </div>
+    <div class="catalog-tools" role="group" aria-label="Filter catalog">
+      <button class="chip" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" data-cat="reproductive" aria-pressed="false">Reproductive</button>
+      <button class="chip" data-cat="respiratory" aria-pressed="false">Respiratory</button>
+      <button class="chip" data-cat="clostridial" aria-pressed="false">Clostridial</button>
+      <button class="chip" data-cat="dewormer" aria-pressed="false">Dewormers &amp; pour-ons</button>
+      <button class="chip" data-cat="fly" aria-pressed="false">Fly control</button>
+      <button class="chip" data-cat="mineral" aria-pressed="false">Minerals</button>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search products, e.g. Lepto" aria-label="Search products"></label>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="section lyo" id="lyophilized">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our specialty</span>
+      <h2>Why our MLV vaccines come freeze-dried</h2>
+      <p>Modified-live viral vaccines (IBR, BVD, PI3, BRSV) are fragile. Lyophilizing — freeze-drying the virus into a dry cake inside the vial — is how we keep the dose you give in June as potent as the day it left the plant.</p>
+    </div>
+    <div class="lyo-grid">
+      <div>
+        <div class="vial-steps">
+          <div class="vstep">
+            <span class="k">At the plant</span>
+            <svg viewBox="0 0 120 70" aria-hidden="true"><rect x="40" y="8" width="40" height="56" rx="6" fill="none" stroke="#F2C230" stroke-width="3"/><rect x="46" y="4" width="28" height="8" rx="2" fill="#F2C230"/><path d="M46 40h28v18H46z" fill="#F2C230" opacity=".35"/><path d="M50 46h20M50 52h20" stroke="#F2C230" stroke-width="2"/></svg>
+            <h4>Frozen, then dried</h4>
+            <p>Live virus is frozen and the water removed under vacuum, leaving a stable cake with potency locked in.</p>
+          </div>
+          <div class="vstep">
+            <span class="k">In your fridge</span>
+            <svg viewBox="0 0 120 70" aria-hidden="true"><rect x="20" y="8" width="40" height="56" rx="6" fill="none" stroke="#F2C230" stroke-width="3"/><path d="M26 40h28v18H26z" fill="#F2C230" opacity=".35"/><rect x="70" y="8" width="30" height="56" rx="6" fill="none" stroke="#A7ABA3" stroke-width="3"/><path d="M74 20h22v38H74z" fill="#A7ABA3" opacity=".35"/><text x="60" y="68" font-size="7" fill="#A7ABA3" text-anchor="middle" font-family="monospace"> </text></svg>
+            <h4>Dry cake + sterile diluent</h4>
+            <p>Two vials: the freeze-dried vaccine and its diluent. Keep both at 35–45°F; the cake is far more forgiving of a warm truck than liquid MLV.</p>
+          </div>
+          <div class="vstep">
+            <span class="k">At the chute</span>
+            <svg viewBox="0 0 120 70" aria-hidden="true"><rect x="40" y="8" width="40" height="56" rx="6" fill="none" stroke="#F2C230" stroke-width="3"/><path d="M46 22h28v36H46z" fill="#F2C230" opacity=".55"/><path d="M60 8V0" stroke="#A7ABA3" stroke-width="3"/><path d="M30 30l-8 4 8 4" fill="none" stroke="#A7ABA3" stroke-width="2"/><path d="M90 30l8 4-8 4" fill="none" stroke="#A7ABA3" stroke-width="2"/></svg>
+            <h4>Mix, swirl, use within an hour</h4>
+            <p>Transfer diluent into the cake, swirl gently — never shake — and keep it on ice. Mix only what you'll run through the chute in the next hour.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <div><b>Potency</b><p>Freeze-drying stops the degradation that liquid live-virus vaccines suffer from the moment they're filled. The dose on the label is the dose in the syringe.</p></div>
+        <div><b>Shelf life</b><p>Unopened lyophilized MLV carries a longer dating than liquid equivalents, so you can buy for the season without watching the expiration.</p></div>
+        <div><b>Cold-chain margin</b><p>Every vaccine must stay refrigerated, but a dry cake tolerates the real-world minutes on a tailgate or in a cooler far better than a reconstituted dose.</p></div>
+        <div><b>Combo flexibility</b><p>Our 5-Way + VL5 uses the liquid Vibrio-Lepto bacterin as the diluent — one reconstitution, one shot, full pre-breeding coverage.</p></div>
+        <div><b>Built for ranch work</b><p>Every vial is sized for a chute day: 10-dose for small groups, 50-dose for the big run, with a tear-off cap that opens with gloves on.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="protocol">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Protocol guide</span>
+      <h2>A cow-calf year, at the headgate</h2>
+      <p>A typical spring-calving protocol using Headgate products. Timing shifts with your calving window; this is the map, not the prescription — build the final program with your veterinarian.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Season</th><th>Cows &amp; heifers</th><th>Calves</th><th>Bulls</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="season">Pre-breeding<span class="when">30–60 days before turnout</span></td>
+            <td><ul><li>5-Way MLV + VL5 (IBR/BVD/PI3/BRSV + Vibrio + Lepto 5)</li><li>Lepto hardjo-bovis booster in known-positive herds</li><li>Trich Guard in exposed herds (2 doses, 2–4 wks apart)</li><li>Switch to Breeding Season Mineral 60 days ahead</li></ul></td>
+            <td>—</td>
+            <td><ul><li>5-Way MLV + VL5</li><li>Trich test before turnout</li><li>Pour-on dewormer</li></ul></td>
+          </tr>
+          <tr>
+            <td class="season">Branding<span class="when">Calves 2–4 months</span></td>
+            <td><ul><li>Fly tags in (1 per head, 2 in heavy pressure)</li><li>Summer Fly Mineral with IGR begins</li></ul></td>
+            <td><ul><li>7-Way + Tetanus clostridial (1st dose)</li><li>Intranasal IBR-PI3-BRSV</li><li>Fly tag (optional, 1 per calf)</li></ul></td>
+            <td><ul><li>Fly tags in</li></ul></td>
+          </tr>
+          <tr>
+            <td class="season">Preconditioning<span class="when">3–6 weeks before weaning</span></td>
+            <td>—</td>
+            <td><ul><li>5-Way MLV (1st dose)</li><li>7-Way + Tetanus (booster)</li><li>Fenbendazole oral drench</li></ul></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="season">Weaning<span class="when">Fall</span></td>
+            <td><ul><li>Pull fly tags</li></ul></td>
+            <td><ul><li>5-Way MLV (booster)</li><li>7-Way + Somnus if going to a lot</li><li>Pour-on for lice and internal parasites</li></ul></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="season">Preg check<span class="when">Fall / early winter</span></td>
+            <td><ul><li>7-Way or 8-Way clostridial (8-Way in redwater country)</li><li>Pour-on dewormer for lice + internal parasites</li><li>Winter Range Mineral; Hi-Mag before green-up</li></ul></td>
+            <td>—</td>
+            <td><ul><li>7-Way clostridial</li><li>Pour-on dewormer</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Follow every label. Modified-live vaccines have pregnancy restrictions unless the label specifically allows use in pregnant cows previously vaccinated with the same product. Observe withdrawal times and Beef Quality Assurance injection guidelines: subcutaneous, in the neck, tented, with a new needle every 10 head.</p>
+  </div>
+</section>
+
+<section class="section" id="direct">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why direct</span>
+      <h2>The markup you've been paying belongs in your pocket</h2>
+    </div>
+    <div class="direct">
+      <div class="prose">
+        <p>Most cattle vaccines travel from a manufacturer to a national distributor to a farm store before they reach your fridge. Each stop adds a margin, and none of them adds a single dose of protection.</p>
+        <p>Headgate skips both stops. We manufacture in our own licensed facility, hold the inventory ourselves, and ship it to you in cold-chain packaging. That is the entire reason we can price 15–20% under retail without touching the product.</p>
+        <p>You get the same thing the distributor got — from the same lot, on the same day it left the cooler — with a veterinarian who will pick up the phone when you have a question about a protocol.</p>
+        <a class="btn" href="#catalog">See the prices</a>
+      </div>
+      <div class="calc" id="calc">
+        <span class="eyebrow">Savings calculator</span>
+        <h3 style="margin-top:8px">What direct is worth on your place</h3>
+        <div class="fields">
+          <label>Mature cows &amp; heifers<input type="number" id="cows" value="150" min="0" step="10"></label>
+          <label>Calves worked per year<input type="number" id="calves" value="135" min="0" step="10"></label>
+        </div>
+        <div class="out">
+          <div class="stat"><span class="k">Retail, per year</span><span class="v num" id="cRetail">$0</span></div>
+          <div class="stat"><span class="k">Headgate, per year</span><span class="v num" id="cHead">$0</span></div>
+          <div class="stat hi"><span class="k">You keep</span><span class="v num" id="cSave">$0</span></div>
+        </div>
+        <p class="fine">Based on the protocol above: pre-breeding combo, clostridials, pour-on, fly tags and mineral for cows; two rounds of MLV and clostridial, intranasal, and a drench for calves. Your program will differ — this is the shape of the savings, not a quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section order" id="order">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Order</span>
+      <h2>Send us your order</h2>
+      <p>Build your cart from the catalog, then send it here. We confirm by phone or email, charge when it ships, and it leaves the cooler the next Monday–Wednesday.</p>
+    </div>
+    <div class="order-grid">
+      <form class="form" id="orderForm">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Ranch / operation<input name="ranch" autocomplete="organization"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+        <label class="full">Ship-to address<input name="address" autocomplete="street-address" placeholder="Street, town, state, zip"></label>
+        <label class="full">Notes (calving window, vet name, questions)<textarea name="notes"></textarea></label>
+        <div class="full" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <button class="btn tag" type="submit">Send order request</button>
+          <button class="btn ghost sm" type="button" id="copyOrder">Copy order summary</button>
+          <span id="formHint" style="font-size:.88rem;color:var(--muted)">Your cart is attached automatically.</span>
+        </div>
+      </form>
+      <div class="contact">
+        <div class="row"><b>Orders</b><span><a href="mailto:orders@headgateanimalhealth.com">orders@headgateanimalhealth.com</a></span></div>
+        <div class="row"><b>Phone</b><span>(800) 555-0143 · Mon–Fri 7am–6pm</span></div>
+        <div class="row"><b>Vet line</b><span>Protocol and label questions, answered by our staff veterinarian.</span></div>
+        <div class="row"><b>Shipping</b><span>Cold-chain, insulated packs with ice. Ships Mon–Wed to avoid weekend layovers. Free over $350; $18 flat under.</span></div>
+        <div class="row"><b>Guarantee</b><span>Arrives cold or we replace it. Photograph the temperature strip on arrival.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="3" width="34" height="34" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M14 10v21M26 10v21M8 10h24" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></svg>Headgate Animal Health</a>
+      <p>Manufacturer-direct vaccines, dewormers, fly control and minerals for cow-calf and stocker operations. Where the work gets done.</p>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <ul><li><a href="#catalog">Reproductive vaccines</a></li><li><a href="#catalog">Respiratory MLV</a></li><li><a href="#catalog">Clostridials</a></li><li><a href="#catalog">Dewormers &amp; pour-ons</a></li><li><a href="#catalog">Fly control</a></li><li><a href="#catalog">Minerals</a></li></ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul><li><a href="#lyophilized">Lyophilized vials</a></li><li><a href="#protocol">Protocol guide</a></li><li><a href="#direct">Why direct</a></li><li><a href="#order">Contact &amp; ordering</a></li></ul>
+    </div>
+    <p class="legal">Headgate Animal Health · headgateanimalhealth.com. Veterinary biologics manufactured under USDA license. Always read and follow label directions. Use of modified-live vaccines in pregnant animals is restricted; consult your veterinarian. Retail comparison prices are typical farm-store and online shelf prices for equivalent products and vary by region.</p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Cart" aria-hidden="true">
+  <header><h3>Your order</h3><button class="close" id="cartClose" aria-label="Close cart">×</button></header>
+  <div class="lines" id="lines"></div>
+  <div class="totals" id="totals"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const CATS = {
+  reproductive:{name:'Reproductive', blurb:'Vibrio, Lepto, Trich and the pre-breeding combos that protect the calf crop before it exists.'},
+  respiratory:{name:'Respiratory MLV', blurb:'Freeze-dried IBR, BVD, PI3 and BRSV for calves at branding, weaning and arrival.'},
+  clostridial:{name:'Clostridial', blurb:'7-Way and 8-Way blackleg protection, with tetanus and somnus options.'},
+  dewormer:{name:'Dewormers & pour-ons', blurb:'Ivermectin, eprinomectin, moxidectin and fenbendazole for worms, lice and grubs.'},
+  fly:{name:'Fly control', blurb:'Insecticide ear tags, pour-ons and back-rubber concentrate for horn and face flies.'},
+  mineral:{name:'Minerals', blurb:'Loose mineral and tubs matched to the season: breeding, fly, winter range and hi-mag.'}
+};
+
+const PRODUCTS = [
+  // Reproductive
+  {id:'HG-RV5VL5', cat:'reproductive', name:'5-Way MLV + VL5', form:'Lyophilized viral · liquid bacterin diluent', lyo:true, stock:'in', tags:['MLV','Fetal protection','Vibrio','Lepto 5'],
+   desc:'IBR, BVD Types 1 & 2, PI3, BRSV plus Campylobacter fetus and 5-way Leptospira including hardjo-bovis. The one-shot pre-breeding cow and heifer vaccine.',
+   sizes:[{label:'10 dose',doses:10,price:38.00,retail:46.99},{label:'50 dose',doses:50,price:158.00,retail:194.99}]},
+  {id:'HG-VL5', cat:'reproductive', name:'Vibrio-Lepto 5', form:'Liquid bacterin', stock:'in', tags:['Killed','Pregnant-safe'],
+   desc:'Campylobacter fetus with Leptospira canicola, grippotyphosa, hardjo, icterohaemorrhagiae and pomona. Killed bacterin; safe at any stage of pregnancy.',
+   sizes:[{label:'10 dose',doses:10,price:16.50,retail:20.49},{label:'50 dose',doses:50,price:64.00,retail:79.99}]},
+  {id:'HG-L5HB', cat:'reproductive', name:'Lepto 5 + Hardjo-Bovis', form:'Liquid bacterin', stock:'in', tags:['Killed','Hardjo-bovis'],
+   desc:'Five-way Lepto with dedicated L. borgpetersenii hardjo-bovis fraction for herds with confirmed hardjo carriers and early embryonic loss.',
+   sizes:[{label:'10 dose',doses:10,price:19.00,retail:23.49},{label:'50 dose',doses:50,price:74.00,retail:91.99}]},
+  {id:'HG-TRICH', cat:'reproductive', name:'Trich Guard', form:'Liquid bacterin', stock:'low', tags:['Killed','2-dose series'],
+   desc:'Tritrichomonas foetus bacterin for cows and heifers in trich-exposed herds. Two doses 2–4 weeks apart, second dose 4 weeks before breeding.',
+   sizes:[{label:'10 dose',doses:10,price:44.00,retail:54.99}]},
+  // Respiratory
+  {id:'HG-MLV5', cat:'respiratory', name:'5-Way MLV', form:'Lyophilized · sterile diluent', lyo:true, stock:'in', tags:['MLV','Fetal protection'],
+   desc:'Modified-live IBR, BVD Types 1 & 2, PI3 and BRSV. Calves at preconditioning and weaning; open cows and heifers 30+ days pre-breeding.',
+   sizes:[{label:'10 dose',doses:10,price:23.50,retail:28.99},{label:'50 dose',doses:50,price:92.00,retail:112.99}]},
+  {id:'HG-IN3', cat:'respiratory', name:'Intranasal IBR-PI3-BRSV', form:'Lyophilized · intranasal diluent', lyo:true, stock:'in', tags:['MLV','Intranasal','From 1 week of age'],
+   desc:'Temperature-sensitive modified-live respiratory vaccine for young calves at branding. Mucosal immunity that isn\'t blocked by colostral antibody.',
+   sizes:[{label:'10 dose',doses:10,price:26.00,retail:31.99},{label:'50 dose',doses:50,price:104.00,retail:127.99}]},
+  {id:'HG-MLV5P', cat:'respiratory', name:'5-Way MLV + Mannheimia', form:'Lyophilized viral · toxoid diluent', lyo:true, stock:'in', tags:['MLV','Pasteurella'],
+   desc:'5-Way MLV with Mannheimia haemolytica leukotoxoid. For calves headed to a lot or through a sale barn — viral and bacterial pneumonia in one shot.',
+   sizes:[{label:'10 dose',doses:10,price:31.00,retail:37.99},{label:'50 dose',doses:50,price:126.00,retail:154.99}]},
+  {id:'HG-K5', cat:'respiratory', name:'5-Way Killed', form:'Liquid inactivated', stock:'in', tags:['Killed','Pregnant-safe'],
+   desc:'Inactivated IBR, BVD 1 & 2, PI3, BRSV for pregnant cows and situations where a modified-live product isn\'t appropriate. Two-dose primary series.',
+   sizes:[{label:'10 dose',doses:10,price:21.00,retail:25.99},{label:'50 dose',doses:50,price:84.00,retail:103.99}]},
+  // Clostridial
+  {id:'HG-C7T', cat:'clostridial', name:'7-Way + Tetanus', form:'Liquid bacterin-toxoid', stock:'in', tags:['Blackleg','Tetanus'],
+   desc:'C. chauvoei, septicum, novyi, sordellii, perfringens Types C & D, plus tetanus toxoid. The branding and preconditioning standard; banded calves need the tetanus.',
+   sizes:[{label:'10 dose',doses:10,price:9.50,retail:11.99},{label:'50 dose',doses:50,price:33.00,retail:40.99},{label:'250 dose',doses:250,price:139.00,retail:171.99}]},
+  {id:'HG-C8', cat:'clostridial', name:'8-Way', form:'Liquid bacterin-toxoid', stock:'in', tags:['Blackleg','Redwater'],
+   desc:'7-Way protection plus C. haemolyticum for bacillary hemoglobinuria (redwater) in liver-fluke country. Fall cow booster in affected regions.',
+   sizes:[{label:'10 dose',doses:10,price:10.50,retail:12.99},{label:'50 dose',doses:50,price:36.00,retail:44.99}]},
+  {id:'HG-C7S', cat:'clostridial', name:'7-Way + Somnus', form:'Liquid bacterin-toxoid', stock:'in', tags:['Blackleg','Histophilus'],
+   desc:'7-Way with Histophilus somni bacterin for calves headed into confinement where somnus pneumonia and brainer are a risk.',
+   sizes:[{label:'10 dose',doses:10,price:12.00,retail:14.99},{label:'50 dose',doses:50,price:44.00,retail:54.99}]},
+  // Dewormers
+  {id:'HG-IVM-PO', cat:'dewormer', name:'Ivermectin Pour-On 5 mg/mL', form:'Topical · 1 mL per 22 lb', stock:'in', tags:['Worms','Lice','Grubs','48-day withdrawal'],
+   desc:'Broad-spectrum pour-on for internal roundworms, lungworms, grubs, lice and mites. The fall workhorse at preg check.',
+   sizes:[{label:'1 L (~20 cows)',doses:20,price:29.00,retail:35.99},{label:'5 L (~100 cows)',doses:100,price:99.00,retail:121.99}]},
+  {id:'HG-EPR-PO', cat:'dewormer', name:'Eprinomectin Pour-On', form:'Topical · 1 mL per 22 lb', stock:'in', tags:['Worms','Lice','Zero milk withdrawal'],
+   desc:'Eprinomectin pour-on with zero meat and milk withdrawal. Use on lactating cows and calves close to sale.',
+   sizes:[{label:'1 L',doses:20,price:41.00,retail:49.99},{label:'5 L',doses:100,price:149.00,retail:184.99}]},
+  {id:'HG-MOX-PO', cat:'dewormer', name:'Moxidectin Pour-On', form:'Topical · 1 mL per 22 lb', stock:'low', tags:['Worms','Lice','Persistent activity'],
+   desc:'Moxidectin for rotation against ivermectin-tolerant parasites, with extended persistent activity against Ostertagia and Dictyocaulus.',
+   sizes:[{label:'1 L',doses:20,price:38.00,retail:46.99},{label:'5 L',doses:100,price:136.00,retail:167.99}]},
+  {id:'HG-FBZ', cat:'dewormer', name:'Fenbendazole Oral Drench 10%', form:'Oral · 2.3 mL per 100 lb', stock:'in', tags:['Worms','Tapeworm','8-day withdrawal'],
+   desc:'White dewormer for calves at preconditioning and in a two-class rotation with a macrocyclic lactone. Covers tapeworms the pour-ons miss.',
+   sizes:[{label:'1 L (~40 calves)',doses:40,price:34.00,retail:41.99},{label:'1 gal (~150 calves)',doses:150,price:109.00,retail:134.99}]},
+  {id:'HG-IVM-INJ', cat:'dewormer', name:'Ivermectin Injectable 1%', form:'Injectable · 1 mL per 110 lb', stock:'in', tags:['Worms','Grubs','35-day withdrawal'],
+   desc:'Subcutaneous ivermectin for reliable dosing when hair coats or rain make pour-ons unreliable.',
+   sizes:[{label:'200 mL',doses:40,price:33.00,retail:39.99},{label:'500 mL',doses:100,price:69.00,retail:84.99}]},
+  // Fly control
+  {id:'HG-TAG-P', cat:'fly', name:'Pyrethroid Fly Tags', form:'Insecticide ear tag · 20 ct', stock:'in', tags:['Horn fly','Face fly','Season 1'],
+   desc:'Synthetic pyrethroid + PBO tags for horn and face flies. One tag per cow, two in heavy pressure. Rotate class each year.',
+   sizes:[{label:'20 tags',doses:20,price:49.00,retail:59.99},{label:'100 tags',doses:100,price:229.00,retail:279.99}]},
+  {id:'HG-TAG-OP', cat:'fly', name:'Organophosphate Fly Tags', form:'Insecticide ear tag · 20 ct', stock:'in', tags:['Horn fly','Face fly','Season 2'],
+   desc:'Organophosphate tags for the rotation year. Alternating classes keeps horn flies from building resistance to either.',
+   sizes:[{label:'20 tags',doses:20,price:46.00,retail:56.99},{label:'100 tags',doses:100,price:215.00,retail:264.99}]},
+  {id:'HG-PERM-PO', cat:'fly', name:'Permethrin Pour-On 1%', form:'Topical · 3 mL per 100 lb', stock:'in', tags:['Horn fly','Lice','Ticks'],
+   desc:'Ready-to-use permethrin pour-on for knockdown at branding and turnout, and for lice when running cattle through in winter.',
+   sizes:[{label:'1 gal',doses:120,price:58.00,retail:71.99}]},
+  {id:'HG-OIL', cat:'fly', name:'Back-Rubber Concentrate', form:'Permethrin 10% EC · mix 1:19 in oil', stock:'backorder', tags:['Horn fly','Self-treating'],
+   desc:'Emulsifiable concentrate for oilers and dust bags at water and mineral. Season-long horn fly control without gathering.',
+   sizes:[{label:'1 qt',doses:1,price:36.00,retail:44.99}]},
+  // Minerals
+  {id:'HG-MIN-BREED', cat:'mineral', name:'Breeding Season Mineral 12:12', form:'Loose · 4 oz/head/day', stock:'in', tags:['Organic trace','Pre-breeding'],
+   desc:'High-phosphorus loose mineral with organic zinc, copper and manganese, plus selenium yeast. Feed 60 days before turnout through breeding.',
+   sizes:[{label:'50 lb bag',doses:1,price:29.00,retail:35.99},{label:'Pallet (40 bags)',doses:40,price:1040.00,retail:1299.00}]},
+  {id:'HG-MIN-FLY', cat:'mineral', name:'Summer Fly Mineral with IGR', form:'Loose · 4 oz/head/day', stock:'in', tags:['IGR','Horn fly'],
+   desc:'Complete summer mineral with an insect growth regulator that breaks the horn fly cycle in manure. Start 30 days before flies emerge.',
+   sizes:[{label:'50 lb bag',doses:1,price:34.00,retail:41.99},{label:'Pallet (40 bags)',doses:40,price:1220.00,retail:1499.00}]},
+  {id:'HG-MIN-RANGE', cat:'mineral', name:'Winter Range Mineral 4:1', form:'Loose · 4 oz/head/day', stock:'in', tags:['Vitamin A','Dormant forage'],
+   desc:'Calcium-heavy mineral with vitamin A and E for cows on dormant grass, stalks and hay through winter.',
+   sizes:[{label:'50 lb bag',doses:1,price:24.00,retail:29.99},{label:'Pallet (40 bags)',doses:40,price:860.00,retail:1079.00}]},
+  {id:'HG-MIN-HIMAG', cat:'mineral', name:'Hi-Mag Mineral', form:'Loose · 4 oz/head/day', stock:'in', tags:['Grass tetany','Spring'],
+   desc:'14% magnesium mineral to head off grass tetany on lush spring pasture and wheat. Begin 2–3 weeks before green-up.',
+   sizes:[{label:'50 lb bag',doses:1,price:31.00,retail:37.99}]},
+  {id:'HG-TUB', cat:'mineral', name:'20% Protein Tub', form:'Cooked molasses · 0.75–1 lb/head/day', stock:'in', tags:['Protein','Winter'],
+   desc:'Self-limiting protein and mineral tub for cows on low-quality winter forage. Full trace-mineral package included.',
+   sizes:[{label:'200 lb tub',doses:1,price:92.00,retail:112.99}]}
+];
+
+const $ = s => document.querySelector(s);
+const money = n => '$' + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const money0 = n => '$' + Math.round(n).toLocaleString('en-US');
+const pct = (p,r) => Math.round((1 - p/r)*100);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- Category tiles ---------- */
+$('#tiles').innerHTML = Object.entries(CATS).map(([k,c])=>{
+  const n = PRODUCTS.filter(p=>p.cat===k).length;
+  return `<a class="tile" href="#catalog" data-go="${k}"><h3>${esc(c.name)}</h3><p>${esc(c.blurb)}</p><span class="n">${n} products →</span></a>`;
+}).join('');
+document.querySelectorAll('.tile').forEach(t=>t.addEventListener('click',()=>setCat(t.dataset.go)));
+
+/* ---------- Catalog ---------- */
+let cat='all', q='';
+function setCat(c){cat=c;document.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.cat===c)));renderGrid();}
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>setCat(b.dataset.cat)));
+$('#search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();renderGrid();});
+
+function stockPill(s){return s==='in'?'<span class="pill in">In stock</span>':s==='low'?'<span class="pill low">Low stock</span>':'<span class="pill bo">Backordered</span>';}
+
+function renderGrid(){
+  const list = PRODUCTS.filter(p=>(cat==='all'||p.cat===cat)&&(!q||[p.name,p.desc,p.form,p.id,...(p.tags||[])].join(' ').toLowerCase().includes(q)));
+  const g=$('#grid');
+  if(!list.length){g.innerHTML='<div class="empty">Nothing matches that. Try "Lepto", "pour-on" or "tags".</div>';return;}
+  g.innerHTML=list.map(p=>`
+    <article class="card" data-id="${p.id}">
+      <div class="top"><div><div class="sku">${p.id}</div><div class="name">${esc(p.name)}</div><div class="form">${esc(p.form)}</div></div>${stockPill(p.stock)}</div>
+      <p class="desc">${esc(p.desc)}</p>
+      <div class="tags">${p.lyo?'<span class="t lyo">Lyophilized</span>':''}${(p.tags||[]).map(t=>`<span class="t">${esc(t)}</span>`).join('')}</div>
+      <div class="buy">
+        <select aria-label="Size for ${esc(p.name)}">${p.sizes.map((s,i)=>`<option value="${i}">${esc(s.label)} — ${money(s.price)}</option>`).join('')}</select>
+        <div class="price-row"><div><span class="price num">${money(p.sizes[0].price)}</span> <span class="retail num">${money(p.sizes[0].retail)}</span></div><span class="save">Save ${pct(p.sizes[0].price,p.sizes[0].retail)}%</span></div>
+        <div class="perdose num">${perDose(p.sizes[0])}</div>
+        <button class="addbtn" ${p.stock==='backorder'?'disabled':''}>${p.stock==='backorder'?'Notify me when back':'Add to order'}</button>
+      </div>
+    </article>`).join('');
+  g.querySelectorAll('.card').forEach(card=>{
+    const p=PRODUCTS.find(x=>x.id===card.dataset.id);
+    const sel=card.querySelector('select');
+    sel.addEventListener('change',()=>{
+      const s=p.sizes[+sel.value];
+      card.querySelector('.price').textContent=money(s.price);
+      card.querySelector('.retail').textContent=money(s.retail);
+      card.querySelector('.save').textContent='Save '+pct(s.price,s.retail)+'%';
+      card.querySelector('.perdose').textContent=perDose(s);
+    });
+    const btn=card.querySelector('.addbtn');
+    btn.addEventListener('click',()=>{
+      if(p.stock==='backorder')return;
+      addToCart(p.id,+sel.value);
+      btn.textContent='Added ✓';btn.classList.add('added');
+      setTimeout(()=>{btn.textContent='Add to order';btn.classList.remove('added');},1200);
+    });
+  });
+}
+function perDose(s){
+  if(s.doses<=1)return '';
+  const unit = /tag/i.test(s.label)?'tag':/lb|bag|tub|pallet/i.test(s.label)?'bag':'dose';
+  return money(s.price/s.doses)+' per '+unit;
+}
+
+/* ---------- Cart ---------- */
+let cart=[];
+try{cart=JSON.parse(localStorage.getItem('hg-cart')||'[]');if(!Array.isArray(cart))cart=[];}catch(e){cart=[];}
+function saveCart(){try{localStorage.setItem('hg-cart',JSON.stringify(cart));}catch(e){}}
+function addToCart(id,size){
+  const l=cart.find(x=>x.id===id&&x.size===size);
+  if(l)l.qty++;else cart.push({id,size,qty:1});
+  saveCart();renderCart();toast('Added to your order');
+}
+function cartLines(){return cart.map(l=>{const p=PRODUCTS.find(x=>x.id===l.id);const s=p&&p.sizes[l.size];return p&&s?{...l,p,s}:null;}).filter(Boolean);}
+function renderCart(){
+  const lines=cartLines();
+  $('#cartCount').textContent=lines.reduce((a,l)=>a+l.qty,0);
+  const box=$('#lines');
+  if(!lines.length){box.innerHTML='<div class="emptycart">Your order is empty. Add products from the catalog.</div>';$('#totals').innerHTML='';return;}
+  box.innerHTML=lines.map((l,i)=>`
+    <div class="line">
+      <div><div class="ln">${esc(l.p.name)}</div><div class="ls">${esc(l.s.label)} · ${l.p.id}</div>
+        <div class="qty"><button data-i="${i}" data-d="-1" aria-label="Decrease">−</button><span>${l.qty}</span><button data-i="${i}" data-d="1" aria-label="Increase">+</button></div></div>
+      <div><div class="lp num">${money(l.s.price*l.qty)}</div><button class="rm" data-rm="${i}">Remove</button></div>
+    </div>`).join('');
+  box.querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>{const l=cart[+b.dataset.i];l.qty+=+b.dataset.d;if(l.qty<=0)cart.splice(+b.dataset.i,1);saveCart();renderCart();}));
+  box.querySelectorAll('[data-rm]').forEach(b=>b.addEventListener('click',()=>{cart.splice(+b.dataset.rm,1);saveCart();renderCart();}));
+  const sub=lines.reduce((a,l)=>a+l.s.price*l.qty,0);
+  const ret=lines.reduce((a,l)=>a+l.s.retail*l.qty,0);
+  const ship=sub>=350?0:18;
+  $('#totals').innerHTML=`
+    <div><span>Subtotal</span><span class="num">${money(sub)}</span></div>
+    <div><span>Cold-chain shipping</span><span class="num">${ship?money(ship):'Free'}</span></div>
+    <div class="sv"><span>vs. retail ${money(ret)}</span><span class="num">You save ${money(ret-sub)}</span></div>
+    <div class="grand"><span>Total</span><span class="num">${money(sub+ship)}</span></div>
+    <a class="btn tag" href="#order" id="toOrder">Send this order</a>`;
+  $('#toOrder').addEventListener('click',closeCart);
+}
+function openCart(){$('#drawer').classList.add('open');$('#scrim').classList.add('open');$('#drawer').setAttribute('aria-hidden','false');$('#cartClose').focus();}
+function closeCart(){$('#drawer').classList.remove('open');$('#scrim').classList.remove('open');$('#drawer').setAttribute('aria-hidden','true');}
+$('#cartOpen').addEventListener('click',openCart);
+$('#cartClose').addEventListener('click',closeCart);
+$('#scrim').addEventListener('click',closeCart);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart();});
+
+/* ---------- Order form ---------- */
+function orderSummary(fd){
+  const lines=cartLines();
+  const sub=lines.reduce((a,l)=>a+l.s.price*l.qty,0);
+  const out=['HEADGATE ANIMAL HEALTH — ORDER REQUEST',''];
+  if(fd){out.push('Name: '+fd.get('name'),'Ranch: '+(fd.get('ranch')||'—'),'Email: '+fd.get('email'),'Phone: '+(fd.get('phone')||'—'),'Ship to: '+(fd.get('address')||'—'),'');}
+  if(lines.length){lines.forEach(l=>out.push(`${l.qty} × ${l.p.name} (${l.s.label}) [${l.p.id}] — ${money(l.s.price*l.qty)}`));out.push('',`Subtotal: ${money(sub)}`,`Shipping: ${sub>=350?'Free':'$18.00'}`);}
+  else out.push('(no items in cart — please add products or describe what you need below)');
+  if(fd&&fd.get('notes')){out.push('','Notes:',fd.get('notes'));}
+  return out.join('\n');
+}
+$('#orderForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const body=orderSummary(fd);
+  const subject='Order request — '+(fd.get('ranch')||fd.get('name'));
+  window.location.href='mailto:orders@headgateanimalhealth.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  $('#formHint').textContent='Opening your email app with the order attached. If nothing opens, use "Copy order summary" and email it to us.';
+});
+$('#copyOrder').addEventListener('click',async()=>{
+  const fd=new FormData($('#orderForm'));
+  try{await navigator.clipboard.writeText(orderSummary(fd));toast('Order summary copied');}
+  catch(e){toast('Copy blocked by browser — select the text in your email instead');}
+});
+
+/* ---------- Savings calculator ---------- */
+const COW_PROTOCOL=[{id:'HG-RV5VL5',size:1,per:1},{id:'HG-C7T',size:1,per:1},{id:'HG-IVM-PO',size:1,per:1},{id:'HG-TAG-P',size:0,per:1},{id:'HG-MIN-BREED',size:0,per:1.8}];
+const CALF_PROTOCOL=[{id:'HG-MLV5',size:1,per:2},{id:'HG-C7T',size:1,per:2},{id:'HG-IN3',size:1,per:1},{id:'HG-FBZ',size:0,per:1}];
+function perHead(proto,key){return proto.reduce((a,x)=>{const p=PRODUCTS.find(y=>y.id===x.id);const s=p.sizes[x.size];return a+(s[key]/s.doses)*x.per;},0);}
+function calc(){
+  const cows=Math.max(0,+$('#cows').value||0), calves=Math.max(0,+$('#calves').value||0);
+  const r=cows*perHead(COW_PROTOCOL,'retail')+calves*perHead(CALF_PROTOCOL,'retail');
+  const h=cows*perHead(COW_PROTOCOL,'price')+calves*perHead(CALF_PROTOCOL,'price');
+  $('#cRetail').textContent=money0(r);$('#cHead').textContent=money0(h);$('#cSave').textContent=money0(r-h)+' / yr';
+}
+$('#cows').addEventListener('input',calc);$('#calves').addEventListener('input',calc);
+
+/* ---------- Toast ---------- */
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),1800);}
+
+renderGrid();renderCart();calc();
+</script>
